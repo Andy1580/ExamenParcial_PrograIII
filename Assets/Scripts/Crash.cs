@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Crash : MonoBehaviour
 {
-    public GameObject explosion;
-    public GameObject player_explosion;
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject player_explosion;
 
-    GameObject Random_Asteroid;
-    Random_Asteroid control;
+    [SerializeField] private GameObject Random_Asteroid;
+    private Random_Asteroid control;
     
     void Start()
     {

@@ -29,6 +29,7 @@ public class PlayerControl : MonoBehaviour
             firetime = Time.time + firetiming;
             Instantiate(bullet, WBulletOut.position, Quaternion.identity);
 
+
         }
     }
 
@@ -39,7 +40,7 @@ public class PlayerControl : MonoBehaviour
 
         vec = new Vector3(horizontal, 0, vertical);
         physics.velocity = vec * vel;
-        physics.position = new Vector3 (Mathf.Clamp(physics.position.x, minX, maxX), Mathf.Clamp(physics.position.z, minZ, maxZ));
+        physics.position = new Vector3(Mathf.Clamp(physics.position.x, minX, maxX), 0.0f, Mathf.Clamp(physics.position.z, minZ, maxZ));
         physics.rotation = Quaternion.Euler(0, 0, physics.velocity.x * -slope);
 
     }
