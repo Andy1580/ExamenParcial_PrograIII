@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 422022393}
   - component: {fileID: 422022395}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: AsteroidSpawn
   m_TagString: game_control
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,9 +383,6 @@ MonoBehaviour:
   _startWaiting: 1
   _createWaiting: 0.5
   _loopWaiting: 1
-  _textScore: {fileID: 668978103}
-  _textGameOver: {fileID: 1854314925}
-  _textRestart: {fileID: 1375723037}
 --- !u!4 &422022394
 Transform:
   m_ObjectHideFlags: 0

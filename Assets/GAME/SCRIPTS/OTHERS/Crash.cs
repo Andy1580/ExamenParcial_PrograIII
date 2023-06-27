@@ -6,14 +6,14 @@ public class Crash : MonoBehaviour
 {
     [SerializeField] private GameObject _explosion;
     [SerializeField] private GameObject _playerExplosion;
-    [SerializeField] private GameObject gM;
 
-    private GameManager control;
+    ScoreSystem _scoreringMethod;
+
+    GameManager _gameOverMethod;
     
     void Start()
     {
-        gM = GameObject.FindGameObjectWithTag ("game_control");
-        control = gM.GetComponent<GameManager> ();
+        _scoreringMethod = GetComponent<ScoreSystem>();
     }
 
     void OnTriggerEnter(Collider col)
@@ -23,13 +23,13 @@ public class Crash : MonoBehaviour
             Destroy(col.gameObject);
             Destroy(gameObject);
             Instantiate(_explosion, transform.position, transform.rotation);
-            control.Scoring(10);
+            _scoreringMethod.Scoring(10);
         }
         if (col.tag=="Player")
         {
-            control.Scoring(-10);
+            _scoreringMethod.Scoring(-10);
             Instantiate(_playerExplosion, col.transform.position,col.transform.rotation);
-            control.GameOver();
+            _gameOverMethod.GameOver();
         }
     }
 }

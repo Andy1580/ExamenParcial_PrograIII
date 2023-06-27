@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class GameManager : MonoBehaviour
+public class AsteroidSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject _asteroid;
 
@@ -14,21 +14,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _createWaiting;
     [SerializeField] private float _loopWaiting;
 
-    [SerializeField] private Text _textScore;
-    [SerializeField] private Text _textGameOver;
-    [SerializeField] private Text _textRestart;
-
     bool _gameOverControl = false;
-
-    private int _score;
 
     private bool _restart = false;
 
     void Start()
     {
-        _score = 0;
-        _textScore.text = "SCORE: " + _score;
-        _score = 0;
         StartCoroutine(RandomCreate());
     }
 
@@ -44,12 +35,6 @@ public class GameManager : MonoBehaviour
     {
         get => _restart;
         private set => _restart = value;
-    }
-
-    public int Score
-    {
-        get =>_score;
-        private set => _score = value;
     }
 
     IEnumerator RandomCreate()
@@ -74,18 +59,5 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(_createWaiting);
         }
 
-    }
-
-    public void Scoring(int comingscore)
-    {
-        _score += comingscore;
-        _textScore.text = "SCORE: " + _score;
-    }
-
-    public void GameOver()
-    {
-        _textGameOver.text = "GAME OVER !";
-        _textRestart.text = "For Restart Press R :)";
-        _gameOverControl = true;
     }
 }
