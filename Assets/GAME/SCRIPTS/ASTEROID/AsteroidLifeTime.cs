@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lines : MonoBehaviour
+public class AsteroidLifeTime : MonoBehaviour
 {
-   void OnTriggerExit(Collider col)
+   void OnTriggerEnter(Collider col)
    {
         Destroy(col.gameObject);
    }

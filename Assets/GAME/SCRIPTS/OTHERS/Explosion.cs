@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Delete_Explosion : MonoBehaviour
+public class Explosion : MonoBehaviour
 {
     void Start()
     {

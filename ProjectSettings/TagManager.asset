@@ -12,6 +12,8 @@ TagManager:
   - Powerup2
   - lines
   - game_control
+  - DeadZone
+  - Bullet
   layers:
   - Default
   - TransparentFX
